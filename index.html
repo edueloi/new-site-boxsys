@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101e24">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="description" content="Conheça o Menu e o Store da BoxSys: soluções de gestão para restaurantes, delivery e lojas.">
+  <title>BoxSys | Gestão para quem faz acontecer</title>
+  <link rel="canonical" href="https://boxsys.com.br/">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="author" content="Develoi">
+  <meta name="keywords" content="sistema para restaurante, sistema para delivery, cardápio digital, sistema para loja, sistema de estoque, PDV, gestão de varejo, BoxSys">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BoxSys">
+  <meta property="og:title" content="BoxSys | Gestão para restaurantes, delivery e lojas">
+  <meta property="og:description" content="Conheça o Menu para food service e o Store para lojas e varejo. Gestão conectada para a rotina real do seu negócio.">
+  <meta property="og:url" content="https://boxsys.com.br/">
+  <meta property="og:image" content="https://boxsys.com.br/assets/boxsys-social-share.png">
+  <meta property="og:image:width" content="1792">
+  <meta property="og:image:height" content="1024">
+  <meta property="og:image:alt" content="BoxSys: soluções de gestão para restaurantes, delivery, lojas e varejo">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BoxSys | Gestão para quem faz acontecer">
+  <meta name="twitter:description" content="Menu para restaurantes e delivery. Store para lojas e varejo.">
+  <meta name="twitter:image" content="https://boxsys.com.br/assets/boxsys-social-share.png">
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"Develoi","legalName":"Develoi Soluções Digitais","taxID":"30.968.335/0001-69","url":"https://boxsys.com.br/","logo":"https://boxsys.com.br/assets/develoi.png","brand":{"@type":"Brand","name":"BoxSys"}},{"@type":"WebSite","name":"BoxSys","url":"https://boxsys.com.br/","inLanguage":"pt-BR","publisher":{"@type":"Organization","name":"Develoi"}}]}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #101e24;
+      --ink-soft: #1c3037;
+      --paper: #f5f8f6;
+      --white: #fff;
+      --muted: #65747a;
+      --line: #dce5e1;
+      --blue: #297ed1;
+      --red: #e53b2c;
+      --orange: #f7920c;
+      --lime: #d8f16a;
+      --font-display: "Space Grotesk", "Trebuchet MS", sans-serif;
+      --font-body: "DM Sans", "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--font-body);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .wrap { width: min(1180px, calc(100% - 48px)); margin-inline: auto; }
+
+    .site-header {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+      border-bottom: 1px solid rgba(220, 229, 225, .8);
+      background: rgba(245, 248, 246, .94);
+      backdrop-filter: blur(14px);
+    }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; font: 700 20px/1 var(--font-display); letter-spacing: 0; }
+    .brand-mark { width: 31px; height: 29px; display: inline-block; flex: 0 0 auto; }
+    .brand-accent { color: var(--blue); }
+    .nav-links { display: flex; align-items: center; gap: 32px; color: #53636a; font-size: 14px; font-weight: 600; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-actions { display: flex; align-items: center; gap: 12px; }
+    .nav-login { color: #53636a; font-size: 13px; font-weight: 700; }
+    .button {
+      min-height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 0 18px;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-dark { color: var(--white); background: var(--ink); }
+    .button-dark:hover { background: #263d45; }
+    .button-light { color: var(--ink); background: var(--white); }
+    .button-outline { color: var(--ink); border-color: #bcc9c4; background: transparent; }
+    .button-outline:hover { border-color: var(--ink); }
+    .arrow { width: 8px; height: 8px; display: inline-block; border-top: 1.5px solid currentColor; border-right: 1.5px solid currentColor; transform: rotate(45deg); }
+    .menu-toggle { display: none; width: 42px; height: 42px; align-items: center; justify-content: center; border: 1px solid var(--line); border-radius: 4px; color: var(--ink); background: transparent; cursor: pointer; }
+    .menu-toggle span, .menu-toggle span::before, .menu-toggle span::after { width: 17px; height: 2px; display: block; position: relative; background: currentColor; }
+    .menu-toggle span::before, .menu-toggle span::after { position: absolute; content: ""; left: 0; }
+    .menu-toggle span::before { top: -6px; }
+    .menu-toggle span::after { top: 6px; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 78px 0 72px;
+      color: var(--white);
+      background-color: var(--ink);
+      background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 52px 52px;
+    }
+    .hero::after { position: absolute; top: 0; right: 0; width: 36%; height: 5px; content: ""; background: linear-gradient(90deg, var(--blue) 0 48%, var(--red) 48% 74%, var(--orange) 74%); }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.04fr) minmax(390px, .96fr); align-items: center; gap: 54px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 22px; color: #a9bcc0; font-size: 11px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; }
+    .eyebrow::before { width: 24px; height: 2px; content: ""; background: var(--lime); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { font-family: var(--font-display); letter-spacing: 0; }
+    h1 { max-width: 680px; margin-bottom: 22px; font-size: clamp(45px, 6vw, 76px); line-height: .99; font-weight: 600; }
+    h1 em { color: var(--lime); font-style: normal; }
+    .hero-copy { max-width: 510px; margin-bottom: 30px; color: #bac8ca; font-size: 16px; line-height: 1.75; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero .button-outline { color: var(--white); border-color: #53666c; }
+    .hero .button-outline:hover { border-color: var(--white); }
+    .hero-products { border-top: 1px solid #40545b; }
+    .hero-product { min-height: 148px; display: grid; grid-template-columns: 138px minmax(0, 1fr); align-items: center; gap: 20px; padding: 15px 0; border-bottom: 1px solid #40545b; }
+    .hero-product iframe { width: 138px; aspect-ratio: 667 / 420; border: 0; background: #09161f; }
+    .hero-product-label { color: #91a4a8; font-size: 10px; font-weight: 700; letter-spacing: 1.3px; text-transform: uppercase; }
+    .hero-product h2 { margin: 7px 0 5px; font-size: 21px; }
+    .hero-product p { margin: 0; color: #bdc9cb; font-size: 13px; line-height: 1.5; }
+
+    .trust-line { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 20px; border-bottom: 1px solid var(--line); color: #53636a; font-size: 12px; font-weight: 600; }
+    .trust-line p { margin: 0; }
+    .trust-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .trust-tags span { padding: 7px 10px; border: 1px solid var(--line); border-radius: 3px; background: rgba(255,255,255,.55); }
+
+    .section { padding: 104px 0; }
+    .section-heading { max-width: 660px; margin-bottom: 42px; }
+    .section-heading .eyebrow { color: #627379; }
+    .section-heading h2 { margin-bottom: 14px; font-size: clamp(34px, 4.4vw, 52px); line-height: 1.05; font-weight: 600; }
+    .section-heading > p:last-child { margin-bottom: 0; color: var(--muted); font-size: 15px; line-height: 1.75; }
+    .product-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .product {
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+    .product-top { min-height: 245px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; background: #101e24; }
+    .product-top::before { position: absolute; inset: 0; content: ""; opacity: .16; background: linear-gradient(135deg, transparent 0 49.7%, #d8f16a 50% 50.3%, transparent 50.6%); background-size: 42px 42px; }
+    .product-top iframe { position: relative; z-index: 1; width: min(78%, 350px); aspect-ratio: 667 / 420; border: 0; background: #09161f; }
+    .product-content { padding: 28px 30px 30px; }
+    .product-meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: 1.1px; text-transform: uppercase; }
+    .product-number { color: var(--blue); font: 600 13px var(--font-display); letter-spacing: 0; }
+    .product-menu .product-number { color: var(--red); }
+    .product-content h3 { margin-bottom: 10px; font-size: 28px; line-height: 1.1; }
+    .product-content > p { min-height: 52px; margin-bottom: 20px; color: var(--muted); font-size: 14px; line-height: 1.7; }
+    .feature-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 11px 16px; margin: 0 0 25px; padding: 19px 0 0; border-top: 1px solid var(--line); list-style: none; }
+    .feature-list li { display: flex; align-items: flex-start; gap: 9px; color: #33464d; font-size: 12px; line-height: 1.5; }
+    .feature-list li::before { width: 6px; height: 6px; flex: 0 0 6px; margin-top: 5px; border-radius: 50%; content: ""; background: var(--blue); }
+    .product-menu .feature-list li::before { background: var(--red); }
+    .product-link { display: inline-flex; align-items: center; gap: 13px; padding-bottom: 5px; border-bottom: 1px solid currentColor; color: var(--ink); font-size: 13px; font-weight: 700; }
+    .product-link .arrow { transition: transform .2s ease; }
+    .product-link:hover .arrow { transform: translate(2px, -2px) rotate(45deg); }
+
+    .choose { padding: 92px 0; color: var(--white); background: #e9efec; }
+    .choose-inner { display: grid; grid-template-columns: .72fr 1.28fr; gap: 58px; align-items: start; }
+    .choose-title .eyebrow { color: #627379; }
+    .choose-title h2 { max-width: 320px; margin: 0; color: var(--ink); font-size: 42px; line-height: 1.05; }
+    .choose-list { border-top: 1px solid #cad6d1; }
+    .choose-row { display: grid; grid-template-columns: 46px minmax(0, 1fr) auto; align-items: center; gap: 18px; padding: 22px 0; border-bottom: 1px solid #cad6d1; color: var(--ink); }
+    .choose-index { color: var(--muted); font: 600 12px var(--font-display); }
+    .choose-row h3 { margin: 0 0 4px; font-size: 18px; }
+    .choose-row p { margin: 0; color: #617178; font-size: 13px; line-height: 1.55; }
+    .choose-row a { display: inline-flex; align-items: center; gap: 11px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+    .choose-row .arrow { transition: transform .2s ease; }
+    .choose-row a:hover .arrow { transform: translate(2px, -2px) rotate(45deg); }
+
+    .about { padding: 95px 0; }
+    .about-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 60px; align-items: start; }
+    .about-brand { display: flex; align-items: center; gap: 15px; padding-top: 8px; }
+    .about-brand .brand-mark { width: 40px; height: 37px; }
+    .about-brand strong { font: 600 34px/1 var(--font-display); }
+    .about-copy h2 { margin-bottom: 15px; font-size: 34px; line-height: 1.12; }
+    .about-copy p { max-width: 650px; margin-bottom: 0; color: var(--muted); font-size: 15px; line-height: 1.8; }
+
+    .closing { padding: 64px 0; color: var(--white); background: var(--ink); }
+    .closing-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+    .closing h2 { margin: 0 0 8px; font-size: 32px; }
+    .closing p { margin: 0; color: #b4c2c4; font-size: 14px; }
+    .closing-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .closing .button-outline { color: var(--white); border-color: #53666c; }
+    .closing .button-outline:hover { border-color: var(--white); }
+    footer { padding: 24px 0; background: #0b171b; color: #9badb0; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; font-size: 11px; }
+    .footer-inner p { margin: 0; }
+    .footer-links { display: flex; gap: 18px; }
+    .footer-links a:hover { color: var(--white); }
+
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .65s ease, transform .65s cubic-bezier(.2, .7, .2, 1); }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+
+    @media (max-width: 900px) {
+      .nav-links { gap: 18px; }
+      .hero-grid { grid-template-columns: minmax(0, 1fr) minmax(310px, .85fr); gap: 32px; }
+      .hero-product { grid-template-columns: 112px minmax(0, 1fr); gap: 14px; }
+      .hero-product iframe { width: 112px; }
+      .choose-inner, .about-grid { grid-template-columns: .7fr 1.3fr; gap: 34px; }
+    }
+    @media (max-width: 700px) {
+      .wrap { width: min(100% - 36px, 540px); }
+      .nav { min-height: 66px; }
+      .nav-links { display: none; position: absolute; top: 66px; left: 0; right: 0; padding: 13px 18px 18px; border-bottom: 1px solid var(--line); background: var(--paper); }
+      .nav-links.is-open { display: grid; gap: 0; }
+      .nav-links a { padding: 13px 2px; border-bottom: 1px solid var(--line); }
+      .nav-login { display: none; }
+      .nav-actions > .button { min-height: 40px; padding-inline: 12px; font-size: 12px; }
+      .menu-toggle { display: inline-flex; }
+      .hero { padding: 62px 0 52px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 38px; }
+      .hero h1 { max-width: 560px; font-size: clamp(45px, 12vw, 62px); }
+      .hero-copy { font-size: 15px; }
+      .hero-product { min-height: 122px; grid-template-columns: 118px minmax(0, 1fr); }
+      .hero-product iframe { width: 118px; }
+      .trust-line { align-items: flex-start; flex-direction: column; gap: 12px; padding-block: 17px; }
+      .section { padding: 72px 0; }
+      .section-heading { margin-bottom: 28px; }
+      .section-heading h2 { font-size: 38px; }
+      .product-grid { grid-template-columns: 1fr; gap: 14px; }
+      .product-top { min-height: 220px; }
+      .product-top iframe { width: min(76%, 310px); }
+      .product-content { padding: 23px 22px 25px; }
+      .product-content > p { min-height: 0; }
+      .choose { padding: 70px 0; }
+      .choose-inner, .about-grid { grid-template-columns: 1fr; gap: 30px; }
+      .choose-title h2 { max-width: 450px; font-size: 37px; }
+      .choose-row { grid-template-columns: 28px minmax(0, 1fr); gap: 12px; }
+      .choose-row > a { grid-column: 2; justify-self: start; margin-top: 4px; }
+      .about { padding: 70px 0; }
+      .about-copy h2 { font-size: 31px; }
+      .closing { padding: 48px 0; }
+      .closing-inner { align-items: flex-start; flex-direction: column; }
+      .closing h2 { font-size: 29px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 390px) {
+      .wrap { width: calc(100% - 28px); }
+      .hero-actions .button { flex: 1 1 auto; padding-inline: 13px; }
+      .feature-list { grid-template-columns: 1fr; }
+      .hero-product { grid-template-columns: 98px minmax(0, 1fr); gap: 10px; }
+      .hero-product iframe { width: 98px; }
+      .hero-product h2 { font-size: 19px; }
+    }
+  </style>
+    <link rel="stylesheet" href="site.css">
+</head>
+<body>
+    <div class="site-loader" data-site-loader aria-label="Carregando BoxSys"></div>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="#inicio" aria-label="BoxSys, início"><svg class="brand-mark" viewBox="180 50 280 250" aria-hidden="true"><polygon points="367,77 328,57 236,104 234,109 269,127 273,127 366,80" fill="#297ed1"/><polygon points="348,105 350,108 385,126 389,126 422,108 420,104 387,87" fill="#297ed1"/><polygon points="196,149 198,155 282,198 287,198 319,167 319,163 233,119 228,119" fill="#ed670e"/><polygon points="458,149 427,119 422,119 338,162 337,167 369,198 373,198 455,156" fill="#eb5e10"/><polygon points="224,183 225,238 308,284 321,289 322,186 292,214 287,215" fill="#e53b2c"/><polygon points="430,184 369,216 365,216 334,186 335,288 430,238" fill="#f7920c"/></svg><span>Box<span class="brand-accent">Sys</span></span></a>
+      <nav class="nav-links" id="navigation" aria-label="Navegação principal">
+        <a href="menu/index.html">Menu</a>
+        <a href="store/index.html">Store</a>
+        <a href="#acessos">Acessos</a>
+        <a href="#sobre">A BoxSys</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="nav-login" href="#acessos">Entrar nos sistemas</a>
+        <a class="button button-dark" href="#solucoes">Conheça os produtos <i class="arrow" aria-hidden="true"></i></a>
+        <button class="menu-toggle" type="button" aria-label="Abrir navegação" aria-expanded="false" aria-controls="navigation"><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="wrap hero-grid">
+        <div class="reveal">
+          <p class="eyebrow">Tecnologia feita para a rotina real</p>
+          <h1>A gestão do seu negócio, no ritmo do seu dia. <em>BoxSys.</em></h1>
+          <p class="hero-copy">Duas soluções especializadas para quem faz acontecer todos os dias: Menu para restaurantes e delivery; Store para lojas e varejo.</p>
+          <div class="hero-actions">
+            <a class="button button-light" href="#solucoes">Explorar soluções <i class="arrow" aria-hidden="true"></i></a>
+            <a class="button button-outline" href="#escolha">Descobrir qual combina</a>
+          </div>
+          <div class="hero-signal" aria-label="BoxSys, produto Develoi">
+            <span class="hero-signal-dot" aria-hidden="true"></span>
+            <p><strong>BoxSys por Develoi</strong><small>Menu para food service · Store para varejo</small></p>
+          </div>
+        </div>
+        <div class="hero-products reveal" aria-label="Soluções BoxSys">
+          <span class="hero-products-label">Ecossistema BoxSys</span>
+          <a class="hero-product" href="menu/index.html">
+            <iframe src="menu.html" title="Logo Menu BoxSys" loading="eager" tabindex="-1"></iframe>
+            <div><span class="hero-product-label">Restaurantes &amp; delivery</span><h2>Menu</h2><p>Cardápio, pedidos e operação em sintonia.</p><small class="hero-product-price">R$ 150,00 / mês</small></div>
+          </a>
+          <a class="hero-product" href="store/index.html">
+            <iframe src="store.html" title="Logo Store BoxSys" loading="eager" tabindex="-1"></iframe>
+            <div><span class="hero-product-label">Varejo &amp; lojas</span><h2>Store</h2><p>Estoque, vendas e gestão no mesmo lugar.</p><small class="hero-product-price">R$ 150,00 / mês</small></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap trust-line" aria-label="Soluções por segmento">
+      <p>Encontre a solução certa para a sua operação.</p>
+      <div class="trust-tags"><span>Restaurantes</span><span>Delivery</span><span>Lojas</span><span>Varejo</span></div>
+    </div>
+
+    <section class="platform-section" aria-labelledby="plataforma-titulo">
+      <div class="wrap">
+        <div class="platform-heading reveal"><p class="eyebrow">Mais que um sistema</p><h2 id="plataforma-titulo">A BoxSys acompanha o trabalho que acontece de verdade.</h2><p>Soluções pensadas para centralizar a operação e deixar a equipe mais preparada para atender, vender e crescer.</p></div>
+        <div class="platform-grid">
+          <article class="platform-card reveal"><span class="platform-index">01</span><h3>Escolha a solução certa</h3><p>Menu para food service. Store para lojas e varejo.</p></article>
+          <article class="platform-card reveal"><span class="platform-index">02</span><h3>Conecte a rotina</h3><p>Informações e tarefas organizadas em um ambiente por operação.</p></article>
+          <article class="platform-card reveal"><span class="platform-index">03</span><h3>Conte com a Develoi</h3><p>BoxSys é um produto Develoi, criado para a rotina de negócios reais.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="solucoes">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Conheça as soluções</p>
+          <h2>Uma plataforma para cada tipo de operação.</h2>
+          <p>Cada produto foi pensado para os detalhes do trabalho que acontece todos os dias no seu negócio.</p>
+        </div>
+        <div class="product-grid">
+          <article class="product product-menu reveal" id="menu">
+            <div class="product-top"><iframe src="menu.html" title="Logo Menu BoxSys" loading="lazy" tabindex="-1"></iframe></div>
+            <div class="product-content">
+              <div class="product-meta"><span>Restaurantes e delivery</span><span class="product-number">01 / 02</span></div>
+              <h3>Menu BoxSys</h3>
+              <p>Conecte cardápio, pedidos, cozinha e caixa em uma rotina mais fluida para restaurantes e delivery.</p>
+              <p class="product-price"><span>Plano completo</span><strong>R$ 150<sup>,00</sup></strong><small>por mês</small><b>Taxa de implementação: R$ 0,00</b></p>
+              <ul class="feature-list">
+                <li>Cardápio digital e QR Code</li>
+                <li>Pedidos e agendamento</li>
+                <li>Painel de cozinha</li>
+                <li>PDV, caixa e operadores</li>
+                <li>Mesas e comandas</li>
+                <li>Estoque e controle financeiro</li>
+              </ul>
+              <a class="product-link" href="menu/index.html">Conhecer o Menu <i class="arrow" aria-hidden="true"></i></a>
+            </div>
+          </article>
+          <article class="product product-store reveal" id="store">
+            <div class="product-top"><iframe src="store.html" title="Logo Store BoxSys" loading="lazy" tabindex="-1"></iframe></div>
+            <div class="product-content">
+              <div class="product-meta"><span>Lojas e varejo</span><span class="product-number">02 / 02</span></div>
+              <h3>Store BoxSys</h3>
+              <p>Tenha mais visão sobre produtos, estoque, vendas e financeiro em um sistema feito para a rotina da loja.</p>
+              <p class="product-price"><span>Plano completo</span><strong>R$ 150<sup>,00</sup></strong><small>por mês</small><b>Taxa de implementação: R$ 0,00</b></p>
+              <ul class="feature-list">
+                <li>Controle de estoque e produtos</li>
+                <li>PDV e vendas</li>
+                <li>Clientes e fornecedores</li>
+                <li>Contas a pagar e receber</li>
+                <li>Relatórios e indicadores</li>
+                <li>Orçamentos e serviços</li>
+              </ul>
+              <a class="product-link" href="store/index.html">Conhecer o Store <i class="arrow" aria-hidden="true"></i></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="solution-scenes" aria-labelledby="cenas-titulo">
+      <div class="wrap">
+        <div class="scenes-heading reveal"><p class="eyebrow">Cada negócio no seu ritmo</p><h2 id="cenas-titulo">Duas experiências, uma base de gestão.</h2></div>
+        <div class="scenes-grid">
+          <article class="scene-card scene-menu reveal">
+            <div class="scene-card-copy"><span>Menu BoxSys</span><h3>Da escolha do cliente ao pedido pronto.</h3><p>Cardápio digital, mesas, delivery, cozinha e retirada trabalhando em sequência.</p><ul><li>Cardápio e QR Code</li><li>Mesas e comandas</li><li>Painel de cozinha e TV</li></ul><a href="menu/index.html">Explorar o Menu <i class="arrow" aria-hidden="true"></i></a></div>
+            <figure><img src="assets/menu-operacao-3d.png" alt="Painéis de pedidos e cardápio digital do Menu BoxSys" loading="lazy"><figcaption>Restaurantes e delivery</figcaption></figure>
+          </article>
+          <article class="scene-card scene-store reveal">
+            <div class="scene-card-copy"><span>Store BoxSys</span><h3>Do produto cadastrado à vitrine da loja.</h3><p>Catálogo, estoque, preço, PDV e presença digital trabalhando na mesma direção.</p><ul><li>Importação e estoque</li><li>PDV e múltiplos terminais</li><li>Site e catálogo sincronizado</li></ul><a href="store/index.html">Explorar o Store <i class="arrow" aria-hidden="true"></i></a></div>
+            <figure><img src="assets/store-operacao-3d.png" alt="Painel de estoque e ponto de venda do Store BoxSys" loading="lazy"><figcaption>Lojas e varejo</figcaption></figure>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="choose" id="escolha">
+      <div class="wrap choose-inner">
+        <div class="choose-title reveal">
+          <p class="eyebrow">Encontre seu sistema</p>
+          <h2>Qual é a sua rotina hoje?</h2>
+          <p>Comece pela solução pensada para o tipo de atendimento que você realiza todos os dias.</p>
+        </div>
+        <div class="choose-list reveal">
+          <div class="choose-row">
+            <span class="choose-index">01</span>
+            <div><h3>Restaurante, lanchonete ou delivery?</h3><p>Organize cardápio, mesas, pedidos, cozinha e retirada com o Menu.</p></div>
+            <a href="menu/index.html">Conhecer o Menu <i class="arrow" aria-hidden="true"></i></a>
+          </div>
+          <div class="choose-row">
+            <span class="choose-index">02</span>
+            <div><h3>Loja ou operação de varejo?</h3><p>Controle catálogo, preço, estoque, PDV e vitrine digital com o Store.</p></div>
+            <a href="store/index.html">Conhecer o Store <i class="arrow" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="access-section" id="acessos" aria-labelledby="acessos-titulo">
+      <div class="wrap">
+        <div class="access-heading reveal">
+          <p class="eyebrow">Área do cliente</p>
+          <h2 id="acessos-titulo">Já usa uma solução BoxSys?</h2>
+          <p>Escolha seu sistema para entrar com segurança e continuar a sua operação.</p>
+        </div>
+        <div class="access-grid">
+          <a class="access-card access-menu reveal" href="https://menu.boxsys.com.br" target="_blank" rel="noopener noreferrer">
+            <div class="access-card-logo"><iframe src="menu.html" title="Logo Menu BoxSys" loading="lazy" tabindex="-1"></iframe></div>
+            <div class="access-card-body"><span class="access-card-kicker">menu.boxsys.com.br</span><h3>Entrar no Menu</h3><p>Restaurantes, atendimento e delivery.</p><span class="access-card-link">Acessar sistema <i class="arrow" aria-hidden="true"></i></span></div>
+          </a>
+          <a class="access-card access-store reveal" href="https://store.boxsys.com.br" target="_blank" rel="noopener noreferrer">
+            <div class="access-card-logo"><iframe src="store.html" title="Logo Store BoxSys" loading="lazy" tabindex="-1"></iframe></div>
+            <div class="access-card-body"><span class="access-card-kicker">store.boxsys.com.br</span><h3>Entrar no Store</h3><p>Lojas, vendas, estoque e varejo.</p><span class="access-card-link">Acessar sistema <i class="arrow" aria-hidden="true"></i></span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="sobre">
+      <div class="wrap about-grid">
+        <div class="about-brand reveal"><svg class="brand-mark" viewBox="180 50 280 250" aria-hidden="true"><polygon points="367,77 328,57 236,104 234,109 269,127 273,127 366,80" fill="#297ed1"/><polygon points="348,105 350,108 385,126 389,126 422,108 420,104 387,87" fill="#297ed1"/><polygon points="196,149 198,155 282,198 287,198 319,167 319,163 233,119 228,119" fill="#ed670e"/><polygon points="458,149 427,119 422,119 338,162 337,167 369,198 373,198 455,156" fill="#eb5e10"/><polygon points="224,183 225,238 308,284 321,289 322,186 292,214 287,215" fill="#e53b2c"/><polygon points="430,184 369,216 365,216 334,186 335,288 430,238" fill="#f7920c"/></svg><strong>Box<span class="brand-accent">Sys</span></strong></div>
+        <div class="about-copy reveal">
+          <p class="eyebrow">Sobre a BoxSys</p>
+          <h2>Tecnologia para a vida real do seu negócio.</h2>
+          <p>A BoxSys é um produto da Develoi, criado para reunir sistemas de gestão desenvolvidos para diferentes rotinas. O Menu atende quem trabalha com alimentação e delivery; o Store acompanha as necessidades de lojas e varejo. Cada operação tem seu espaço, seu fluxo e seu acesso próprio.</p>
+          <div class="develoi-signature"><img src="assets/develoi.png" alt="Develoi Soluções Digitais"><span>Produto desenvolvido pela Develoi</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="wrap closing-inner">
+        <div><h2>Vamos conhecer sua próxima solução?</h2><p>Acesse o sistema que combina com o seu negócio.</p></div>
+        <div class="closing-actions">
+          <a class="button button-outline" href="https://menu.boxsys.com.br" target="_blank" rel="noopener noreferrer">Acessar Menu <i class="arrow" aria-hidden="true"></i></a>
+          <a class="button button-light" href="https://store.boxsys.com.br" target="_blank" rel="noopener noreferrer">Acessar Store <i class="arrow" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div class="footer-develoi"><img src="assets/develoi.png" alt="Develoi Soluções Digitais"><p>© <span data-year>2026</span> Develoi. BoxSys é um produto Develoi.<br>CNPJ: 30.968.335/0001-69</p></div>
+      <div class="footer-links"><a href="https://menu.boxsys.com.br" target="_blank" rel="noopener noreferrer">Menu</a><a href="https://store.boxsys.com.br" target="_blank" rel="noopener noreferrer">Store</a></div>
+    </div>
+  </footer>
+
+  <aside class="whatsapp-helper" data-whatsapp-helper aria-label="Atendimento pelo WhatsApp">
+    <div class="whatsapp-options" id="whatsapp-opcoes" data-whatsapp-options hidden>
+      <p>Olá! Como podemos ajudar?</p>
+      <a href="https://wa.me/5515992418299?text=Ol%C3%A1%21%20Quero%20conhecer%20as%20solu%C3%A7%C3%B5es%20da%20BoxSys." target="_blank" rel="noopener noreferrer">Conhecer a BoxSys</a>
+      <a href="https://wa.me/5515992418299?text=Ol%C3%A1%21%20Quero%20entender%20como%20o%20Menu%20BoxSys%20pode%20ajudar%20meu%20restaurante%20ou%20delivery." target="_blank" rel="noopener noreferrer">Quero conhecer o Menu</a>
+      <a href="https://wa.me/5515992418299?text=Ol%C3%A1%21%20Quero%20entender%20como%20o%20Store%20BoxSys%20pode%20ajudar%20minha%20loja." target="_blank" rel="noopener noreferrer">Quero conhecer o Store</a>
+    </div>
+    <button class="whatsapp-trigger" data-whatsapp-trigger type="button" aria-expanded="false" aria-controls="whatsapp-opcoes" aria-label="Abrir atendimento pelo WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.5 9.5 0 0 0-8.13 14.41L2.5 21.5l5.25-1.33A9.5 9.5 0 1 0 12 2Zm0 17.25a7.66 7.66 0 0 1-3.9-1.06l-.28-.17-3.11.79.83-3.02-.18-.31A7.7 7.7 0 1 1 12 19.25Zm4.22-5.76c-.23-.12-1.35-.67-1.56-.75-.21-.08-.36-.12-.51.12-.15.23-.59.75-.72.9-.13.15-.26.17-.49.06-1.32-.66-2.18-1.17-3.05-2.65-.23-.39.23-.36.66-1.2.08-.16.04-.3-.02-.42-.06-.11-.51-1.23-.7-1.68-.18-.44-.37-.38-.51-.38h-.44c-.15 0-.4.06-.61.3-.21.23-.8.78-.8 1.9s.82 2.2.93 2.35c.11.15 1.61 2.46 3.9 3.45.54.23.96.37 1.29.47.54.17 1.03.15 1.42.09.43-.06 1.35-.55 1.54-1.08.19-.53.19-.99.13-1.08-.05-.1-.2-.15-.43-.27Z" fill="currentColor"/></svg><span>Fale conosco</span></button>
+  </aside>
+
+  <script src="site.js" defer></script>
+</body>
+</html>
